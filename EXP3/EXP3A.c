@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-int main(int argc, char *argv[]){
+int main(){
 	int num1,num2,pid;
 	pid=getpid();
 	printf("Proces id from program 1:- %d\n",pid);
