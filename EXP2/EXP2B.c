@@ -9,7 +9,7 @@ int main(){
 		pid=getpid();
 		ppid=getppid();
 		printf("Child process starts\n");
-		printf("Process id of child process= %d\n",pid);\
+		printf("Process id of child process= %d\n",pid);
 		printf("Process id of parent process from child process = %d\n",ppid);
 		printf("Enter any two numbers :- ");
 		scanf("%d%d",&num1,&num2);
