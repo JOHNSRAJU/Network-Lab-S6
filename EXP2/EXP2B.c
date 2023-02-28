@@ -4,7 +4,6 @@
 #include<sys/types.h>
 int main(){
 	int pid,ppid,i,num1,num2;
-	pid=getpid();
 	if(fork()==0){
 		pid=getpid();
 		ppid=getppid();
