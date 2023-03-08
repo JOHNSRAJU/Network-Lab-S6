@@ -15,7 +15,7 @@ void func(int connfd){
 	char buff[MAX];
 	int n;
 	// infinite loop for chat
-	while(true) {
+	while(1) {
 		bzero(buff, MAX);
 
 		// read the message from client and copy it in buffer
