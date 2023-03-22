@@ -39,16 +39,16 @@ int main(){
   addr_size = sizeof(client_addr);
   recvfrom(sockfd, buffer, 1024, 0, (struct sockaddr*)&client_addr, &addr_size);
   printf("[+]Data recv: %s\n", buffer);
-  if(strcmp(buffer,"exit")==0){
+  if(strcmp(buffer,"exit\n")==0){
     exit(0);
   }
   printf("Enter a message :-");
   bzero(buffer, 1024);
-  scanf("%s",str);
-  strcpy(buffer, str);
+  n=0;
+  while ((buffer[n++] = getchar()) != '\n');
   sendto(sockfd, buffer, 1024, 0, (struct sockaddr*)&client_addr, sizeof(client_addr));
   printf("[+]Data send: %s\n", buffer);
-  if(strcmp(str,"exit")==0){
+  if(strcmp(buffer,"exit\n")==0){
     exit(0);
   }
  }
