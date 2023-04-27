@@ -1,22 +1,16 @@
 #include <stdio.h>
 #include <limits.h>
-
 #define MAX_NODES 10
-
 struct nodes {
     int dist[MAX_NODES];
     int through[MAX_NODES];
 };
-
 int main() {
     int n, i, j, k, matrix[MAX_NODES][MAX_NODES], distanceVector[MAX_NODES][MAX_NODES], through[MAX_NODES][MAX_NODES];
-
     // Get the number of nodes and distances between them
     printf("Enter number of nodes: ");
     scanf("%d", &n);
-
     struct nodes node[n];
-
     // Get the distance between each node
     printf("Enter the distance between each node (if there is no connection, input -1):\n");
     for (i = 0; i < n; i++) {
@@ -35,7 +29,6 @@ int main() {
             }
         }
     }
-
     // Print the initial table
     printf("\nInitial distance table:\n");
     printf("\t");
@@ -51,7 +44,6 @@ int main() {
         }
         printf("\n");
     }
-
     // Implement the distance vector algorithm
     for (k = 0; k < n; k++) {
         for (i = 0; i < n; i++) {
@@ -66,25 +58,15 @@ int main() {
             }
         }
     }
-
     // Print the final distance vectors and through nodes for each node
     for (i = 0; i < n; i++) {
-        printf("\nDistance vectors for node %d:\n", i);
-        printf("\t\t");
+        printf("\nDistance vector table for node %d:\n", i);
+        printf("Node\tDistance     Through\n");
         for(j=0;j<n;j++){
-            printf("%d\t",j);
+            printf(" %d\t",j);
+            printf("   %d\t", node[i].dist[j]);
+            printf("\t%d\n", node[i].through[j]);
         }
-        printf("\n");
-        printf("Distances:\t");
-        for (j = 0; j < n; j++) {
-            printf("%d\t", node[i].dist[j]);
-        }
-        printf("\n");
-        printf("Through nodes:\t");
-        for (j = 0; j < n; j++) {
-            printf("%d\t", node[i].through[j]);
-        }
-        printf("\n");
     }
     return 0;
 }
