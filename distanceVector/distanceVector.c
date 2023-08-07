@@ -58,6 +58,7 @@ int main() {
             }
         }
     }
+    
     // Print the final distance vectors and through nodes for each node
     for (i = 0; i < n; i++) {
         printf("\nDistance vector table for node %d:\n", i);
